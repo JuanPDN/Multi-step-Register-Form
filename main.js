@@ -1,49 +1,81 @@
+import { showError } from "./src/validations.js";
+
 const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const errors = {
-  empty: "Este campo no puede estar vacío",
-  type: "Este campo debe contener un email valido",
-};
+function validation() {
+  if (showError(inputName) && showError(inputEmail)) {
+    return true;
+  }
+  return false;
+}
 
-function showError(element, messages) {
-  const inputError = document.querySelector(`.error-${element.id}`);
-  if (element.value.trim().length === 0) {
-    if (!inputError) {
-      element.insertAdjacentHTML(
-        "afterend",
-        `<p class="error-${element.id}">* ${messages.empty}</p>`
-      );
+const page2 = document.querySelector(".step1 .btn");
+
+page2.addEventListener("click", function () {
+  const page = document.querySelector(".pages p");
+  const selected = document.querySelector(".page2");
+  const complete = document.querySelector(".page1");
+  const hidden = document.querySelector(".step1");
+  const unhidden = document.querySelector(".step2");
+
+  if (validation()) {
+    hidden.classList.add("hidden");
+    unhidden.classList.remove("hidden");
+    complete.classList.remove("active");
+    selected.classList.add("active");
+    page.textContent = "Step 2 of 3";
+    return;
+  }
+});
+
+const options = [];
+
+function validation2(element) {
+  element.addEventListener("change", function () {
+    const selected = document.querySelector(`label[for="${element.id}"]`);
+    if (element.checked) {
+      options.push(selected.textContent);
+      selected.classList.add("selected");
+    } else {
+      options.splice(options.indexOf(selected.textContent), 1);
+      selected.classList.remove("selected");
     }
+  });
+}
+
+const options1 = document.getElementById("option1");
+const options2 = document.getElementById("option2");
+const options3 = document.getElementById("option3");
+
+[options1, options2, options3].forEach(validation2);
+
+const page3 = document.querySelector(".step2 .btn");
+page3.addEventListener("click", function () {
+  const inputError = document.querySelector(".error-type");
+
+  if (options.length === 0) {
+    if (!inputError) {
+      document
+        .querySelector('label[for="option3"]')
+        .insertAdjacentHTML(
+          "afterend",
+          '<p class="error-type">* Debe seleccionar al menos un item </p>'
+        );
+    }
+    return;
   } else if (inputError) {
     inputError.remove();
   }
-  if (element.id === "email") {
-    const erroType = document.querySelector(".error-type");
-
-    if (!emailRegex.test(element.value)) {
-      if (!erroType) {
-        element.insertAdjacentHTML(
-          "afterend",
-          `<p class="error-type">* ${messages.type}</p>`
-        );
-      }
-    } else if (erroType) {
-      erroType.remove();
-    }
-  }
-
-  return;
-}
-
-function validation() {
-  showError(inputName, errors);
-  showError(inputEmail, errors);
-}
-
-const next = document.querySelector(".step1 .btn");
-
-next.addEventListener("click", function () {
-  validation();
+  const page = document.querySelector(".pages p");
+  const selected = document.querySelector(".page3");
+  const complete = document.querySelector(".page2");
+  const hidden = document.querySelector(".step2");
+  const unhidden = document.querySelector(".step3");
+  hidden.classList.add("hidden");
+  unhidden.classList.remove("hidden");
+  complete.classList.remove("active");
+  complete.classList.add("complete");
+  selected.classList.add("active");
+  page.textContent = "Step 3 of 3";
 });

@@ -23,21 +23,21 @@
 
                 <input class="btn" type="button" value="continue">
             </fieldset>
-            <fieldset class="step2">
+            <fieldset class="step2 hidden">
                 <legend>Which topics you are interested in?</legend>
 
                 <input type="checkbox" name="option1" id="option1">
                 <label class="option" for="option1">Software Development</label>
 
                 <input type="checkbox" name="option2" id="option2">
-                <label class="option selected" for="option2">User Experience</label>
+                <label class="option" for="option2">User Experience</label>
 
                 <input type="checkbox" name="option3" id="option3">
                 <label class="option" for="option3">Graphic Design</label>
 
                 <input class="btn" type="button" value="continue">
             </fieldset>
-            <fieldset class="step3">
+            <fieldset class="step3 hidden">
                 <legend>Summary</legend>
 
                 <div class="summary-info">
@@ -56,21 +56,21 @@
         </form>
     </div>
     <div class="pages">
-        <p>Step 3 of 3</p>
+        <p>Step 1 of 3</p>
         <ul>
-            <li class="complete">
+            <li class="page1 complete active">
                 <div></div>
             </li>
-            <li class="active">
+            <li class="page2" >
                 <div></div>
             </li>
-            <li>
+            <li class="page3">
                 <div></div>
             </li>
         </ul>
     </div>
     <img class="image2" src="./src/assets/blur-radial.svg" alt="blur-radial">
 </body>
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 
 </html>

@@ -182,6 +182,7 @@ li {
 }
 
 .pages li {
+  z-index: 5;
   padding: 0.3rem;
   border-radius: 50%;
   margin: 0.15rem;
@@ -204,10 +205,9 @@ li {
 .error-email,
 .error-type {
   font-size: small;
-  color: rgb(192, 4, 4);
+  color: #E5E7EB;
 }
 
-.step2,
-.step3 {
+.hidden {
   display: none;
 }
