@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <img class="image1" src="./src/assets/blur-radial.svg" alt="blur-radial">
+    <div class="card">
+        <form action="#">
+            <fieldset class="step1">
+                <legend>Register</legend>
+
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="enter your name" autocomplete="given-name" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="example@gmail.com" autocomplete="email" required>
+
+                <input class="btn" type="button" value="continue">
+            </fieldset>
+            <fieldset class="step2">
+                <legend>Which topics you are interested in?</legend>
+
+                <input type="checkbox" name="option1" id="option1">
+                <label class="option" for="option1">Software Development</label>
+
+                <input type="checkbox" name="option2" id="option2">
+                <label class="option selected" for="option2">User Experience</label>
+
+                <input type="checkbox" name="option3" id="option3">
+                <label class="option" for="option3">Graphic Design</label>
+
+                <input class="btn" type="button" value="continue">
+            </fieldset>
+            <fieldset class="step3">
+                <legend>Summary</legend>
+
+                <div class="summary-info">
+                    <p><span>Name: </span></p>
+                    <p><span>Email: </span></p>
+                </div>
+
+                <div class="summary-topics">
+                    <h3>Topics:</h3>
+                    <ul>
+                    </ul>
+                </div>
+
+                <input class="btn" type="submit" value="Confirm">
+            </fieldset>
+        </form>
+    </div>
+    <div class="pages">
+        <p>Step 3 of 3</p>
+        <ul>
+            <li class="complete">
+                <div></div>
+            </li>
+            <li class="active">
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+            </li>
+        </ul>
+    </div>
+    <img class="image2" src="./src/assets/blur-radial.svg" alt="blur-radial">
+</body>
+<script src="main.js"></script>
+
+</html>
