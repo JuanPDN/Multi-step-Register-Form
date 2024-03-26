@@ -25,6 +25,17 @@ page2.addEventListener("click", function () {
     complete.classList.remove("active");
     selected.classList.add("active");
     page.textContent = "Step 2 of 3";
+
+    const summaryInfo = document.querySelectorAll(".summary-info p");
+
+    summaryInfo.forEach(function (e) {
+      if (e.textContent === "Name: ") {
+        e.insertAdjacentText("beforeend", inputName.value);
+      } else if (e.textContent === "Email: ") {
+        e.insertAdjacentText("beforeend", inputEmail.value);
+      }
+    });
+
     return;
   }
 });
@@ -78,4 +89,10 @@ page3.addEventListener("click", function () {
   complete.classList.add("complete");
   selected.classList.add("active");
   page.textContent = "Step 3 of 3";
+
+  const topics = document.querySelector(".summary-topics ul");
+
+  options.forEach((e) => {
+    topics.insertAdjacentHTML("beforeend", `<li>${e}</li>`);
+  });
 });
