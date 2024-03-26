@@ -96,3 +96,17 @@ page3.addEventListener("click", function () {
     topics.insertAdjacentHTML("beforeend", `<li>${e}</li>`);
   });
 });
+
+const submit = document.querySelector('.btn[type="submit"]');
+submit.addEventListener("click", function (e) {
+  const notification = document.querySelector(".card");
+  e.preventDefault();
+  notification.insertAdjacentHTML(
+    "afterbegin",
+    '<div class="notification">✅ Success</div>'
+  );
+  setTimeout(() => {
+    document.querySelector(".notification").remove();
+    location.reload();
+  }, 3000);
+});
