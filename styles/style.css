@@ -163,7 +163,6 @@ li {
 
 .pages p {
   font-size: 0.75rem;
-  /* color: #4d5562; */
   color: #394150;
 }
 
@@ -200,7 +199,6 @@ li {
 
 .active {
   background-color: #212936;
-  /* background-color: #4d5562; */
 }
 
 .error-name,
