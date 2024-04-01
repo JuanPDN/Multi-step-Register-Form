@@ -33,7 +33,7 @@ body {
 }
 
 .card {
-  width: 300px;
+  width: 60%;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -46,13 +46,19 @@ body {
 
  @media screen and (min-width: 640px) {
   .card {
-    width: 425px;
+    width: 50%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .card {
-    width: 425px;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .card {
+    width: 30%;
   }
 }
 
