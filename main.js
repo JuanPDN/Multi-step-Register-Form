@@ -110,3 +110,10 @@ submit.addEventListener("click", function (e) {
     location.reload();
   }, 3000);
 });
+
+const form = document.querySelector('form');
+form.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});
